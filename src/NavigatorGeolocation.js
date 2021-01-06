@@ -1,29 +1,47 @@
-const fetch = require("node-fetch");
+const http = require("http");
 
 class NavigatorGeolocation {
 
     getCurrentPosition(callback, options = {}) {
         const req = Date.now();
 
-        fetch(`http://ip-api.com/json${options && options.ip && typeof options.ip === "string" ? `/${options.ip}` : ""}`)
-            .then(res => res.json())
-            .then(data => {
-                if (data.status !== "success") return callback(null, new Error("Something went wrong!"));
+        try {
+            http.get(`http://ip-api.com/json${options && options.ip && typeof options.ip === "string" ? `/${options.ip}` : ""}`, res => {
 
-                const payload = {
-                    accuracy: null,
-                    altitude: null,
-                    altitudeAccuracy: null,
-                    heading: null,
-                    latitude: data.lat,
-                    longitude: data.lon,
-                    speed: null,
-                    timestamp: req
-                };
+                let raw = "";
 
-                callback(payload, null);
-            })
-            .catch(e => callback(null, e));
+                res.on("data", (chunk) => raw += chunk.toString());
+
+                res.once("end", () => {
+                    let data;
+
+                    try {
+                        data = JSON.parse(raw);
+                    } catch (e) {
+                        return callback(null, new Error("Something went wrong!"));
+                    }
+
+                    if (data.status !== "success") return callback(null, new Error("Something went wrong!"));
+
+                    const payload = {
+                        accuracy: null,
+                        altitude: null,
+                        altitudeAccuracy: null,
+                        heading: null,
+                        latitude: data.lat,
+                        longitude: data.lon,
+                        speed: null,
+                        timestamp: req
+                    };
+
+                    callback(payload, null);
+                });
+
+                res.once("error", err => callback(null, err));
+            });
+        } catch(e) {
+            callback(null, e);
+        }
     }
 
     static applyToClass(structure) {
