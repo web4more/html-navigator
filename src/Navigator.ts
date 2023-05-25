@@ -1,27 +1,25 @@
-import NavigatorConcurrentHardware from "./NavigatorConcurrentHardware";
-import NavigatorGeolocation from "./NavigatorGeolocation";
-import NavigatorID from "./NavigatorID";
-import NavigatorLanguage from "./NavigatorLanguage";
-import NavigatorOnLine from "./NavigatorOnLine";
+import NavigatorConcurrentHardware from "./NavigatorConcurrentHardware.js";
+import NavigatorGeolocation from "./NavigatorGeolocation.js";
+import NavigatorID from "./NavigatorID.js";
+import NavigatorLanguage from "./NavigatorLanguage.js";
+import NavigatorOnLine from "./NavigatorOnLine.js";
 import os from "os";
 
 // Navigator class
 class Navigator {
+  constructor() {
+    this.geolocation = new NavigatorGeolocation();
+  }
 
-    constructor() {
-        this.geolocation = new NavigatorGeolocation();
-    }
+  get vendor() {
+    return `Node${process.version.replace("v", "")}`;
+  }
 
-    get vendor() {
-        return `Node${process.version.replace("v", "")}`;
-    }
+  get deviceMemory() {
+    return Math.floor(os.totalmem() / 1e9);
+  }
 
-    get deviceMemory() {
-        return Math.floor(os.totalmem() / 1e+9);
-    }
-
-    vibrate() {}
-
+  vibrate() {}
 }
 
 // apply props
@@ -32,10 +30,10 @@ NavigatorOnLine.applyToClass(NavigatorOnLine);
 NavigatorGeolocation.applyToClass(Navigator);
 
 export {
-    Navigator,
-    NavigatorConcurrentHardware,
-    NavigatorID,
-    NavigatorLanguage,
-    NavigatorOnLine,
-    NavigatorGeolocation
+  Navigator,
+  NavigatorConcurrentHardware,
+  NavigatorID,
+  NavigatorLanguage,
+  NavigatorOnLine,
+  NavigatorGeolocation,
 };
