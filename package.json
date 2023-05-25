@@ -1,5 +1,4 @@
 {
-  "type": "module",
   "name": "node-navigator",
   "version": "1.0.1",
   "description": "Navigator api for node.js",

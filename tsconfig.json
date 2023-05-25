@@ -3,7 +3,7 @@
     "outDir": "dist",
     "declaration": true,
     "target": "ESNext",
-    "module": "ESNext",
+    "module": "CommonJS",
     "moduleResolution": "nodenext",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,

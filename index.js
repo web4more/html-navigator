@@ -1,4 +1,2 @@
-import package_ from "./package.json" assert { type: "json" };
-
-export * from "./dist/Navigator.js";
-export const version = package_.version;
+module.exports = require("./dist/Navigator");
+module.exports.version = require("./package.json").version;
