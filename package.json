@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/DevSnowflake/node-navigator#readme",
   "devDependencies": {
+    "@types/node": "^20.2.3",
     "tsx": "^3.12.7",
     "typescript": "^5.0.4"
   }
