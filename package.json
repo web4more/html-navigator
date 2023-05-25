@@ -23,6 +23,11 @@
     "url": "https://github.com/DevSnowflake/node-navigator/issues"
   },
   "homepage": "https://github.com/DevSnowflake/node-navigator#readme",
+  "files": [
+    "src",
+    "index.js",
+    "typings"
+  ],
   "devDependencies": {
     "@types/node": "^20.2.3",
     "tsx": "^3.12.7",
