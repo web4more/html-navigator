@@ -1,5 +1,5 @@
-const os = require("os");
-const util = require("util");
+import os from "os";
+import util from "util";
 
 class NavigatorID {
 
@@ -76,7 +76,7 @@ class NavigatorID {
 
     static applyToClass(structure) {
         const props = ["appCodeName", "appName", "appVersion", "platform", "product", "userAgent", "taintEnabled"];
-        
+
         for (const prop of props) {
             Object.defineProperty(
                 structure.prototype,
@@ -89,4 +89,4 @@ class NavigatorID {
 
 util.deprecate(NavigatorID.prototype.taintEnabled, "This feature is no longer recommended. Though some browsers might still support it, it may have already been removed from the relevant web standards, may be in the process of being dropped, or may only be kept for compatibility purposes.");
 
-module.exports = NavigatorID;
+export default NavigatorID;

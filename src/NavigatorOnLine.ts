@@ -1,4 +1,4 @@
-const cp = require("child_process");
+import cp from "child_process";
 
 class NavigatorOnLine {
 
@@ -25,4 +25,4 @@ class NavigatorOnLine {
 
 }
 
-module.exports = NavigatorOnLine;
+export default NavigatorOnLine;

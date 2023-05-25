@@ -22,4 +22,4 @@ class NavigatorLanguage {
 
 }
 
-module.exports = NavigatorLanguage;
+export default NavigatorLanguage;

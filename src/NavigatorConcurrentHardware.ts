@@ -1,4 +1,4 @@
-const os = require("os");
+import os from "os";
 
 class NavigatorConcurrentHardware {
 
@@ -20,4 +20,4 @@ class NavigatorConcurrentHardware {
 
 }
 
-module.exports = NavigatorConcurrentHardware;
+export default NavigatorConcurrentHardware;

@@ -1,4 +1,4 @@
-const http = require("http");
+import http from "http";
 
 class NavigatorGeolocation {
 
@@ -58,4 +58,4 @@ class NavigatorGeolocation {
 
 }
 
-module.exports = NavigatorGeolocation;
+export default NavigatorGeolocation;

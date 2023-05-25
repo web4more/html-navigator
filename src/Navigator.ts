@@ -1,9 +1,9 @@
-const NavigatorConcurrentHardware = require("./NavigatorConcurrentHardware");
-const NavigatorGeolocation = require("./NavigatorGeolocation");
-const NavigatorID = require("./NavigatorID");
-const NavigatorLanguage = require("./NavigatorLanguage");
-const NavigatorOnLine = require("./NavigatorOnLine");
-const os = require("os");
+import NavigatorConcurrentHardware from "./NavigatorConcurrentHardware";
+import NavigatorGeolocation from "./NavigatorGeolocation";
+import NavigatorID from "./NavigatorID";
+import NavigatorLanguage from "./NavigatorLanguage";
+import NavigatorOnLine from "./NavigatorOnLine";
+import os from "os";
 
 // Navigator class
 class Navigator {
@@ -31,7 +31,7 @@ NavigatorLanguage.applyToClass(Navigator);
 NavigatorOnLine.applyToClass(NavigatorOnLine);
 NavigatorGeolocation.applyToClass(Navigator);
 
-module.exports = {
+export {
     Navigator,
     NavigatorConcurrentHardware,
     NavigatorID,
