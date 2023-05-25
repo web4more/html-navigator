@@ -1,8 +1,8 @@
-const os = require("os");
+import os from "os";
 
 class NavigatorConcurrentHardware {
 
-    get hardwareConcurrency() {
+    get hardwareConcurrency(): number {
         return os.cpus().length;
     }
 
@@ -20,4 +20,4 @@ class NavigatorConcurrentHardware {
 
 }
 
-module.exports = NavigatorConcurrentHardware;
+export default NavigatorConcurrentHardware;
