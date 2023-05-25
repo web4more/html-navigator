@@ -1,8 +1,27 @@
 import http from "http";
 
+export interface GeolocationCallback {
+    (success: GeolocationData, error: Error): void;
+}
+
+export interface GeolocationOptions {
+    ip?: string;
+}
+
+export interface GeolocationData {
+    accuracy: null;
+    altitude: null;
+    altitudeAccuracy: null;
+    heading: null;
+    latitude: number;
+    longitude: number;
+    speed: null;
+    timestamp: number;
+}
+
 class NavigatorGeolocation {
 
-    getCurrentPosition(callback, options = {}) {
+    getCurrentPosition(callback: GeolocationCallback, options = {}): void {
         const req = Date.now();
 
         try {

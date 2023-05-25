@@ -2,7 +2,7 @@ import cp from "child_process";
 
 class NavigatorOnLine {
 
-    get onLine() {
+    get onLine(): boolean {
         try {
             cp.execSync("ping google.com", { windowsHide: true });
             return true;

@@ -1,10 +1,10 @@
 class NavigatorLanguage {
 
-    get language() {
+    get language(): string {
         return process.env.LANG || process.env.LANGUAGE || process.env.LC_ALL || process.env.LC_MESSAGES;
     }
 
-    get languages() {
+    get languages(): string[] {
         return [this.language];
     }
 

@@ -2,7 +2,7 @@ import os from "os";
 
 class NavigatorConcurrentHardware {
 
-    get hardwareConcurrency() {
+    get hardwareConcurrency(): number {
         return os.cpus().length;
     }
 
