@@ -11,7 +11,8 @@
 🎉 Lets you use browser idioms like `navigator.userAgent` in Node.js \
 📦 Helpfully provides spec-defined algorithms as sub-exports \
 🧊 Isomorphic so you can use this even in browsers \
-🤝 Works well with other Navigator extensions like [jcbhmr/geolocation]
+🤝 Works well with other Navigator extensions like [jcbhmr/geolocation] \
+📜 Based on [8.9 System state and capabilities | HTML Standard]
 
 ## Installation
 
@@ -42,7 +43,9 @@ console.log(navigator.userAgent);
 
 ### What's included
 
-Here's the complete Web IDL interface that's included:
+This polyfill **only** targets that part of the `Navigator` interface that's
+defined by the [HTML Standard]. Here's the complete Web IDL interface that's
+included:
 
 ```webidl
 [Exposed=*]
@@ -74,3 +77,10 @@ npm start
 ```
 
 Make sure you run the full `npm test` script before committing though! 😉
+
+[GitHub Codespaces]: https://github.com/features/codespaces
+[Yarn]: https://yarnpkg.com/
+[pnpm]: https://pnpm.io/
+[8.9 System state and capabilities | HTML Standard]:
+  https://html.spec.whatwg.org/multipage/system-state.html
+[HTML Standard]: https://html.spec.whatwg.org/multipage/
