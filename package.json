@@ -1,36 +1,38 @@
 {
+  "type": "module",
   "name": "node-navigator",
-  "version": "1.0.1",
-  "description": "Navigator api for node.js",
-  "main": "index.js",
-  "types": "dist/index.d.ts",
-  "scripts": {
-    "test": "echo 'No tests yet!'",
-    "prepack": "tsc"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/DevSnowflake/node-navigator.git"
-  },
+  "version": "2.0.0",
+  "description": "🧭 A Navigator and .navigator polyfill for Node.js environments",
   "keywords": [
+    "nodejs",
     "navigator",
-    "browser",
-    "geolocation"
+    "navigator-api",
+    "polyfill"
   ],
-  "author": "Snowflake107",
+  "homepage": "https://github.com/skdhg/node-navigator#readme",
+  "bugs": "https://github.com/skdhg/node-navigator/issues",
+  "repository": "github:skdhg/node-navigator",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/DevSnowflake/node-navigator/issues"
-  },
-  "homepage": "https://github.com/DevSnowflake/node-navigator#readme",
-  "files": [
-    "src",
-    "index.js",
-    "typings"
+  "contributors": [
+    "Jacob Hummer <jcbhmr@outlook.com> (https://jcbhmr.me/)",
+    "Kunjan Dhungana (https://dhunganakunjan.com.np/)"
   ],
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build-docs": "typedoc",
+    "prepack": "tsc",
+    "start": "tsx --test --watch test/**.test.ts",
+    "test": "tsx --test test/**.test.ts"
+  },
   "devDependencies": {
     "@types/node": "^20.2.3",
+    "prettier": "^2.8.8",
+    "prettier-plugin-jsdoc": "^0.4.2",
+    "prettier-plugin-packagejson": "^2.4.3",
     "tsx": "^3.12.7",
+    "typedoc": "^0.24.7",
     "typescript": "^5.0.4"
   }
 }
