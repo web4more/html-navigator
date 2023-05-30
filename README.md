@@ -41,26 +41,27 @@ console.log(navigator.userAgent);
 //=> 'Node.js/20.0.0'
 ```
 
-### What's included
+📚 Check out the [docs website] to see what is and isn't included in this
+polyfill. If you're interested in more navigator-related polyfills, check out
+[jcbhmr/geolocation] polyfill which mixes in the `.geolocation` property to get
+your current location.
 
-This polyfill **only** targets that part of the `Navigator` interface that's
-defined by the [HTML Standard]. Here's the complete Web IDL interface that's
-included:
+### Native support table
 
-```webidl
-[Exposed=*]
-interface Navigator {}
-```
+|                             | Node.js | Deno | Bun | Browsers |
+| --------------------------- | ------- | ---- | --- | -------- |
+| `navigator`                 | ❌      | ✅   | ✅  | ✅       |
+| `Navigator`                 | ❌      | ✅   | ❌  | ✅       |
+| NavigatorID                 | ❌      | 🟨   | 🟨  | ✅       |
+| NavigatorLanguage           | ❌      | ✅   | ❌  | ✅       |
+| NavigatorOnLine             | ❌      | ❌   | ❌  | ✅       |
+| NavigatorContentUtils       | ❌      | ❌   | ❌  | ✅       |
+| NavigatorCookies            | ❌      | ❌   | ❌  | ✅       |
+| NavigatorPlugins            | ❌      | ❌   | ❌  | ✅       |
+| NavigatorConcurrentHardware | ❌      | ✅   | ✅  | ✅       |
 
-💡 You can access all of these interfaces directly as 🦄 ponyfills via a file
-export like this:
-
-```js
-import Navigator from "node-navigator/Navigator.js";
-
-console.log(globalThis.Navigator, Navigator);
-//=> undefined, [Function: Navigator]
-```
+🗣️Node.js seems to be _considering_ adding a `navigator` object in
+[nodejs/node#39540]. Add your 👍 to show you want it!
 
 ## Development
 
@@ -78,9 +79,11 @@ npm start
 
 Make sure you run the full `npm test` script before committing though! 😉
 
+<!-- prettier-ignore-start -->
 [GitHub Codespaces]: https://github.com/features/codespaces
 [Yarn]: https://yarnpkg.com/
 [pnpm]: https://pnpm.io/
-[8.9 System state and capabilities | HTML Standard]:
-  https://html.spec.whatwg.org/multipage/system-state.html
+[8.9 System state and capabilities | HTML Standard]: https://html.spec.whatwg.org/multipage/system-state.html
 [HTML Standard]: https://html.spec.whatwg.org/multipage/
+[nodejs/node#39540]: https://github.com/nodejs/node/issues/39540
+<!-- prettier-ignore-end -->
